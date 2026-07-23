@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complimentary Compliance Check — Gambit Development Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-page: #F0F4F8;
+    --bg-card: #FFFFFF;
+    --bg-input: #F7F9FB;
+    --accent: #80B6CC;
+    --accent-hover: #6DA3BA;
+    --accent-light: #E8F2F6;
+    --text-heading: #1D1F25;
+    --text-body: #4A4D55;
+    --text-muted: #8A8D94;
+    --text-label: #2C3038;
+    --border: #DDE2E8;
+    --border-focus: #80B6CC;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: var(--bg-page);
+    color: var(--text-body);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 460px;
+    width: 100%;
+  }
+
+  .logo-wrap {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .logo-wrap img {
+    height: 32px;
+    width: auto;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 44px 36px 36px;
+  }
+
+  .section-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--text-heading);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-body);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .truth-line {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+
+  .steps {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 0 4px;
+  }
+
+  .step {
+    flex: 1;
+    text-align: center;
+  }
+
+  .step-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+  }
+
+  .step-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--text-label);
+    margin-bottom: 6px;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-heading);
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(128, 182, 204, 0.15);
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #B0B4BC;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 66px;
+  }
+
+  button {
+    width: 100%;
+    padding: 16px;
+    background: var(--accent);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 4px;
+  }
+
+  button:hover {
+    background: var(--accent-hover);
+  }
+
+  button:active {
+    transform: scale(0.98);
+  }
+
+  .trust {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 20px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .trust strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0 0;
+  }
+
+  .footer-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 12px;
+    font-weight: 300;
+  }
+
+  .footer-note a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .success {
+    display: none;
+    text-align: center;
+  }
+
+  .success-icon {
+    font-size: 56px;
+    margin-bottom: 16px;
+    color: var(--accent);
+  }
+
+  .success h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--text-heading);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .success p {
+    color: var(--text-body);
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .success .signature {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 18px;
+    margin-top: 16px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="logo-wrap">
+    <img src="https://gambit.net.au/wp-content/uploads/2025/06/gambit-logo.png" alt="Gambit Development Group">
+  </div>
+  <div class="card">
+    <form id="leadForm" onsubmit="return handleSubmit(event)">
+      <div class="section-label">Complimentary Assessment · 2 Minutes</div>
+      <h1>Can your land be subdivided, and should it?</h1>
+      <p class="description">We'll run a quick compliance check on your property: council overlays, zoning, and whether it's actually worth pursuing.</p>
+      <p class="truth-line">Just because it can be done<br>doesn't mean it should be done.</p>
+      <div class="steps">
+        <div class="step"><div class="step-icon">1</div><div class="step-label">Check your<br>address</div></div>
+        <div class="step"><div class="step-icon">2</div><div class="step-label">Initial compliance<br>check</div></div>
+        <div class="step"><div class="step-icon">3</div><div class="step-label">You get a<br>straight answer</div></div>
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name">
+      
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="address">Property Address</label>
+        <textarea id="address" name="address" placeholder="Property address" required autocomplete="street-address"></textarea>
+      </div>
+      <button type="submit">Check My Block</button>
+      <p class="trust">This is a <strong>complimentary</strong> service. No cost. Your details stay private. We'll personally review your block and get back to you, <strong>usually within 24 hours.</strong></p>
+    </form>
+    <div class="success" id="successMsg">
+      <div class="success-icon">✓</div>
+      <h2>Got it. We're on it.</h2>
+      <p>We'll check your property against council overlays and zoning, then get back to you with a straight answer, usually within 24 hours.</p>
+      <p class="signature">Marce</p>
+    </div>
+  </div>
+  <hr class="divider">
+  <p class="footer-note">Gambit Development Group · <a href="https://gambit.net.au">gambit.net.au</a> · 0473 327 947</p>
+</div>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  var name = document.getElementById('name').value.trim();
+  var email = document.getElementById('email').value.trim();
+  var address = document.getElementById('address').value.trim();
+  var subject = encodeURIComponent('Compliance Check — ' + name);
+  var body = encodeURIComponent('Name: ' + name + '\\nEmail: ' + email + '\\nAddress: ' + address + '\\n\\nSubmitted via landing page.');
+  document.getElementById('leadForm').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+  window.location.href = 'mailto:contact@gambit.net.au?subject=' + subject + '&body=' + body;
+  return false;
+}
+</script>
+</body>
+</html>
