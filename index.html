@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Complimentary Compliance Check — Gambit Development Group</title>
+<title>Complimentary Compliance Check - Gambit Development Group</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -270,10 +270,10 @@
 <body>
 <div class="page">
   <div class="logo-wrap">
-    <img src="https://gambit.net.au/wp-content/uploads/2025/06/gambit-logo.png" alt="Gambit Development Group">
+    <img src="https://gambit.net.au/wp-content/uploads/2026/03/gambit-logo-450x200.png" alt="Gambit Development Group">
   </div>
   <div class="card">
-    <form id="leadForm" onsubmit="return handleSubmit(event)">
+    <form id="leadForm">
       <div class="section-label">Complimentary Assessment · 2 Minutes</div>
       <h1>Can your land be subdivided, and should it?</h1>
       <p class="description">We'll run a quick compliance check on your property: council overlays, zoning, and whether it's actually worth pursuing.</p>
@@ -283,20 +283,18 @@
         <div class="step"><div class="step-icon">2</div><div class="step-label">Initial compliance<br>check</div></div>
         <div class="step"><div class="step-icon">3</div><div class="step-label">You get a<br>straight answer</div></div>
       </div>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name">
-      
+      <div class="monday-form">
+        <iframe
+          src="https://forms.monday.com/forms/embed/19c42a21019c23ba2ab178d41a65893f?r=apse2"
+          title="Complimentary Initial Compliance Check"
+          width="100%"
+          height="760"
+          style="border:0;background:transparent;"></iframe>
       </div>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
-      </div>
-      <div class="form-group">
-        <label for="address">Property Address</label>
-        <textarea id="address" name="address" placeholder="Property address" required autocomplete="street-address"></textarea>
-      </div>
-      <button type="submit">Check My Block</button>
+      <p class="trust" style="text-align:center;">
+        Form not loading?
+        <a href="https://forms.monday.com/forms/19c42a21019c23ba2ab178d41a65893f?r=apse2" style="color:inherit;">Open it in a new page</a>.
+      </p>
       <p class="trust">This is a <strong>complimentary</strong> service. No cost. Your details stay private. We'll personally review your block and get back to you, <strong>usually within 24 hours.</strong></p>
     </form>
     <div class="success" id="successMsg">
@@ -309,19 +307,5 @@
   <hr class="divider">
   <p class="footer-note">Gambit Development Group · <a href="https://gambit.net.au">gambit.net.au</a> · 0473 327 947</p>
 </div>
-<script>
-function handleSubmit(e) {
-  e.preventDefault();
-  var name = document.getElementById('name').value.trim();
-  var email = document.getElementById('email').value.trim();
-  var address = document.getElementById('address').value.trim();
-  var subject = encodeURIComponent('Compliance Check — ' + name);
-  var body = encodeURIComponent('Name: ' + name + '\\nEmail: ' + email + '\\nAddress: ' + address + '\\n\\nSubmitted via landing page.');
-  document.getElementById('leadForm').style.display = 'none';
-  document.getElementById('successMsg').style.display = 'block';
-  window.location.href = 'mailto:contact@gambit.net.au?subject=' + subject + '&body=' + body;
-  return false;
-}
-</script>
 </body>
 </html>
