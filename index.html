@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Complimentary Compliance Check - Gambit Development Group</title>
+<meta name="description" content="Can your block be subdivided, and should it? Ask for a free compliance check on your South Australian block. No obligation, answered within 24 hours.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-22JR6GKZZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-22JR6GKZZW');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -369,6 +377,7 @@ function handleSubmit(e) {
   })
   .then(function (d) {
     if (!d.ok) { throw new Error(d.error || 'failed'); }
+    if (typeof gtag === 'function') { gtag('event', 'generate_lead', { form_id: 'leadForm' }); }
     document.getElementById('leadForm').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
   })
